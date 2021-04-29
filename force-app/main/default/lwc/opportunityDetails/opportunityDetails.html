@@ -1,0 +1,56 @@
+<template>
+
+    <template if:true={opportunity}>
+
+        <div class="slds-align_absolute-center slds-m-bottom_large" style="max-width: 800px">
+            <div class="slds-page-header slds-page-header_vertical">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="standard:opportunity" title="Opportunity">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-hyphenate"
+                                        title={opportunity.Name}>{opportunity.Name}</span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-page-header__controls">
+                </div>
+                <ul class="slds-page-header__detail-list">
+                    <li class="slds-page-header__detail-item">
+                        <div class="slds-text-title slds-truncate" title="Cliente">Cliente</div>
+                        <div title={opportunity.Account.Name}>{opportunity.Account.Name} </div>
+                    </li>
+                    <li class="slds-page-header__detail-item">
+                        <div class="slds-text-title slds-truncate" title="Fase">Fase</div>
+                        <div title={opportunity.StageName}>{opportunity.StageNameTranslated}</div>
+                    </li>
+                    <li class="slds-page-header__detail-item">
+                        <div class="slds-text-title slds-truncate" title="Probabilidade">Probabilidade</div>
+                        <div title={opportunity.Probability}>{opportunity.Probability}</div>
+                    </li>
+                    <li class="slds-page-header__detail-item">
+                        <div class="slds-text-title slds-truncate" title="Data de Fechamento">Data de Fechamento</div>
+                        <div title={opportunity.CloseDate}>{opportunity.CloseDateBrazilian}</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <lightning-map map-markers={mapMarkers} markers-title="Locais">
+        </lightning-map>
+
+        <div class="slds-m-vertical_large slds-align_absolute-center">
+            <lightning-button variant="brand" label="Próximo" title="Próximo" onclick={nextScreen}>
+            </lightning-button>
+        </div>
+
+    </template>
+
+</template>

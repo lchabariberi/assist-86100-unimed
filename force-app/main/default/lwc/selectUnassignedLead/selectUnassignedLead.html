@@ -1,0 +1,33 @@
+<template>
+
+    <template if:false={unassignedLeads}>
+        <div class="slds-text-heading_medium slds-align-center">
+            Não há leads novos.
+        </div>
+    </template>
+
+    <template if:true={unassignedLeads}>
+
+        <div style="width: 600px; margin: auto; max-height: 400px; overflow-y: auto;">
+            <template for:each={unassignedLeads} for:item="lead">
+                <div key={lead.Id} class="slds-grid slds-m-horizontal_medium slds-p-vertical_medium slds-border_bottom">
+                    <div class="slds-m-right_x-small">
+                        <lightning-icon icon-name="standard:lead" title="Lead">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-col">
+                        <div class="slds-text-title_bold">{lead.Name}</div>
+                        <div>{lead.Company} • {lead.Title} • {lead.Phone} • {lead.Email}</div>
+                    </div>
+                    <div class="slds-m-left_small slds-align_absolute-center">
+                        <lightning-button variant="brand" label="Aceitar" title="Aceitar lead" value={lead.Id}
+                            onclick={nextScreen}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </template>
+        </div>
+
+    </template>
+
+</template>

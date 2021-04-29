@@ -1,0 +1,18 @@
+:host {
+    --sds-c-button-text-color: #00995d;
+    --sds-c-button-text-color-hover: #007145;
+
+    --sds-c-button-brand-color-background: #00995d;
+    --sds-c-button-brand-color-border: #00995d;
+
+    --sds-c-button-brand-color-background-hover: #007145;
+    --sds-c-button-brand-color-border-hover: #007145;
+
+    --sds-c-button-brand-color-background-active: #007145;
+    --sds-c-button-brand-color-border-active: #007145;
+
+    --lwc-brandAccessible: #00995d;
+    --lwc-brandAccessibleActive: #007145;
+
+    --lwc-shadowButtonFocus: 0 0 3px #00995d;
+}

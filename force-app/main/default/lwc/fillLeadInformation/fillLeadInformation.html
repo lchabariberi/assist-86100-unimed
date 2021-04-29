@@ -1,0 +1,27 @@
+<template>
+
+    <div style="width: 600px; margin: auto;">
+        <div class="slds-border_bottom">
+            <lightning-card variant="Narrow" title="Confirme e Preencha as Informações do Lead"
+                icon-name="standard:lead">
+                <div class="slds-p-vertical_small slds-p-horizontal_large">
+                    <lightning-record-form object-api-name="Lead" record-id={leadId} mode="view" columns="2"
+                        fields={fields}>
+                    </lightning-record-form>
+                </div>
+            </lightning-card>
+        </div>
+
+        <div class="slds-m-vertical_large">
+            <lightning-radio-group name="qualificarProposta" label="Gostaria de qualificar para proposta?"
+                options={options} value={value} required type="button" onclick={handleQualificaProposta}>
+            </lightning-radio-group>
+        </div>
+
+        <div class="slds-m-vertical_large slds-align_absolute-center">
+            <lightning-button variant="brand" label="Próximo" title="Próximo" onclick={nextScreen}>
+            </lightning-button>
+        </div>
+    </div>
+
+</template>
